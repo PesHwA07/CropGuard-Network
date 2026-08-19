@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+venv/
+.venv/
+
+# Node
+node_modules/
+frontend/dist/
+
+# Environment
+.env
+!.env.example
+
+# Data & Model Weights
+vision_training/data/
+vision_training/runs/
+*.pt
+*.onnx
+uploads/
+
+# MLflow local artifacts
+mlflow/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
