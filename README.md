@@ -26,7 +26,7 @@ Farmers upload crop photos for instant YOLOv8-based diagnosis (bounding-box loca
 
 ```bash
 # 1. Clone and enter the project
-git clone "https://github.com/PesHwA07/CropGuard-Network.git"
+git clone https://github.com/PesHwA07/CropGuard-Network.git
 cd CropGuard-Network
 
 # 2. Copy env template
