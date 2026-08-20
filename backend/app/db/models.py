@@ -67,7 +67,7 @@ class Farmer(Base):
     email = Column(String, unique=True, nullable=False, index=True)
     hashed_password = Column(String, nullable=False)
     full_name = Column(String, nullable=False)
-    role = Column(SQLEnum(Role), nullable=False)
+    role = Column(SQLEnum(Role, values_callable=lambda e: [m.value for m in e]), nullable=False)
     district = Column(String, nullable=True)
     created_at = Column(DateTime, server_default=func.now())
 
@@ -94,7 +94,7 @@ class DiseaseReport(Base):
     farmer_id = Column(
         PG_UUID(as_uuid=True), ForeignKey("farmers.id"), nullable=False
     )
-    crop_type = Column(SQLEnum(CropType), nullable=False)
+    crop_type = Column(SQLEnum(CropType, values_callable=lambda e: [m.value for m in e]), nullable=False)
 
     # Multi-disease detections stored as JSONB array
     detections = Column(JSONB, nullable=True)
