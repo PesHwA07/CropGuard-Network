@@ -22,15 +22,13 @@ depends_on: Union[str, Sequence[str], None] = None
 
 
 def upgrade() -> None:
-    # --- Enums ---
+    # Enums are created automatically by create_table — no explicit .create() needed.
     role_enum = sa.Enum(
         "farmer", "shop_owner", "extension_officer", name="role", schema=None
     )
     crop_enum = sa.Enum(
         "maize", "soybean", "sugarcane", "cotton", "wheat", name="croptype", schema=None
     )
-    role_enum.create(op.get_bind(), checkfirst=True)
-    crop_enum.create(op.get_bind(), checkfirst=True)
 
     # --- farmers ---
     op.create_table(
