@@ -49,6 +49,13 @@ class Settings(BaseSettings):
     jwt_algorithm: str = "HS256"
     jwt_expiry_minutes: int = 1440
 
+    # Vision / Diagnosis
+    confidence_threshold: float = 0.60
+    max_upload_size_mb: int = 10
+    blur_threshold: float = 100.0
+    brightness_min: int = 40
+    brightness_max: int = 220
+
     @property
     def database_url(self) -> str:
         """Async database URL for the application (asyncpg driver)."""
