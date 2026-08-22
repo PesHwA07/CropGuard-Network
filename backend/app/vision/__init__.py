@@ -1,0 +1,1 @@
+# CropGuard vision processing package
